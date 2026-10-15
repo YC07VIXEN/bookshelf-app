@@ -43,4 +43,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+     /**
+     * ユーザーが登録したお気に入り一覧（1対多）
+     */
+    public function favorites(): HasMany
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    /**
+     * ユーザーがした「いいね」一覧（1対多）
+     */
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
+    }
 }
